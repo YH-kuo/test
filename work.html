@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- 什麼版本IE 就用什麼版本的標準模式 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>函函V2 作品集</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="font/css/fontello.css">
+    <link rel="stylesheet" href="css/mainstyle.css">
+	<!-- vue -->
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <main class="work-page">
+        <div class="go-home"><a class="demo-icon icon-mylogo" href="#!">HOME</a></div>
+
+        <h1>作品集</h1>
+
+        <div class="button-group filters-button-group">
+            <button class="button is-checked" data-filter="*">全部作品</button>
+            <button class="button" data-filter=".web">網頁</button>
+            <button class="button" data-filter=".graphic">平面</button>
+            <button class="button" data-filter=".other">其他相關</button>
+            <button class="button" data-filter=".draw">興趣繪畫</button>
+        </div>
+          
+        <div id="grid" class="grid">
+            <div v-for="item in list" class="element-item" :class=" item.type " :data-category=" item.type ">
+                <a href="#!">
+                    <img :src="'images/card/' + item.path " alt="" />
+                    {{ item.title }}
+                </a>
+            </div>
+        </div>
+
+        <div class="info-box">
+            <div class="left-pic">
+                <div class="tip">往下滾動<i class="demo-icon icon-down-dir"></i></div>
+                <img src="images/card/web/web_01.jpg" alt="">
+            </div>
+            <div class="center-page">
+                <p>PAGE</p>
+                <ul>
+                    <li><a class="active" href="">1</a></li>
+                    <li><a href="">2</a></li>
+                </ul>
+            </div>
+            <div class="right-info">
+                <div class="info-card">
+                    <h3>一頁式服務介紹頁面</h3>
+                    <p>依照公司企劃提供之文案，與平面設計主管討論可製作之版型，由平面設計師提供設計圖檔，我再將其製作成網頁Html檔案，確認後再將寄信功能套上(PHP)並上線公司網域空間。</p>
+                </div>
+                <div class="info-card">
+                    <h3>負責內容</h3>
+                    <p>
+                        提供UI/UX建議<br>
+                        負責HTML & CSS 撰寫<br>
+                        滑動及輪播效果套用<br>
+                        RWD調整<br>
+                        MailPHP套用
+                    </p>
+                    <p>
+                        <span>#HTML</span>
+                        <span>#CSS</span>
+                    </p>
+                </div>
+                <div class="info-card">
+                    <h3>網址連結</h3>
+                    <p>
+                        <a href="">歐立利商業空間設計</a>
+                        (可能因原本網站改版或下架而失效或有所不同)
+                    </p>
+                </div>
+                <a class="close" href="#!" alt="close"><i class="demo-icon icon-cancel"></i></a>
+            </div>
+        </div>
+          
+
+        <div class="side-link">
+            <a class="go-about" href="#!"><i>關於我</i></a>
+            <a class="go-top" href="#!"><i>TOP</i></a>
+        </div>
+    </main>
+
+	<script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/data.js"></script>
+
+</body>
+</html>
